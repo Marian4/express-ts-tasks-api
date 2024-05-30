@@ -27,7 +27,7 @@ class UserRepository {
     async show ({ id, email }: IShowUser) : Promise<IGetUser> {
         const model = id ? await User.findOne({_id: id}) : await User.findOne({email})
 
-        return model
+        return model as IGetUser
     }
 }
 
